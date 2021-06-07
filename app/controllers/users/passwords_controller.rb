@@ -1,6 +1,6 @@
 class Users::PasswordsController <
 Devise::PasswordsController
-  before_action :ensure_normal_user, only: :find_or_create_by
+  before_action :ensure_normal_user, only: :create
 
   def ensure_normal_user
     if params[:user][:email].downcase == "guest@example.com"
